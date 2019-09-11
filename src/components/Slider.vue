@@ -24,21 +24,6 @@
       </form>
       <!-- /.search form -->
       <!-- sidebar menu: : style can be found in sidebar.less -->
-      <!-- <ul data-widget="tree" class="sidebar-menu">
-        <va-slide-item
-          v-for="(item,index) in slideMenuItems"
-          :data="item"
-          :key="index"
-          :type="item.type"
-          :isHeader="item.isHeader"
-          :icon="item.icon"
-          :name="item.name"
-          :badge="item.badge"
-          :items="item.items"
-          :router="item.router"
-          :link="item.link">
-        </va-slide-item>
-      </ul> -->
        <!-- <ul data-widget="tree" class="sidebar-menu"> -->
         <sidebar-item v-for="route in routes" :key="route.path" :item="route" :base-path="route.path" />
        <!-- </ul> -->
@@ -49,7 +34,6 @@
 
 <script>
 // import { mapGetters } from 'vuex'
-import VASlideItem from '../components/VASlideItem'
 import SidebarItem from './SidebarItem'
 
 export default {
@@ -77,7 +61,6 @@ export default {
   //   ])
   // },
   components: {
-    'va-slide-item': VASlideItem,
     SidebarItem
   },
   computed: {

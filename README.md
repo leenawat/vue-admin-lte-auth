@@ -27,3 +27,6 @@ yarn run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+### ref:
+See [https://github.com/devjin0617/vue2-admin-lte](https://github.com/devjin0617/vue2-admin-lte)
