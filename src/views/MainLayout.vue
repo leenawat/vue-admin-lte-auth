@@ -1,25 +1,25 @@
 <template>
   <div class="wrapper">
-    <!-- <va-navibar></va-navibar>
-    <va-slider :slideMenuItems="slideMenuItems"></va-slider> --> 
+    <va-navibar></va-navibar>
+    <va-slider :slideMenuItems="slideMenuItems"></va-slider> 
    <va-content-wrap></va-content-wrap>
   </div>
 
 </template>
 <script>
-// import VANaviBar from '../components/NaviBar.vue'
-// import VASlider from '../components/Slider.vue'
+import VANaviBar from '../components/NaviBar.vue'
+import VASlider from '../components/Slider.vue'
 import VAContentWrap from '../components/ContentWrap.vue'
-// import slideMenuItems from '../lib/slideMenuItems.js'
+import slideMenuItems from '../lib/slideMenuItems.js'
 export default {
   data () {
     return {
-      // slideMenuItems: slideMenuItems
+      slideMenuItems: slideMenuItems
     }
   },
   components: {
-  //   'va-navibar': VANaviBar,
-  //   'va-slider': VASlider,
+    'va-navibar': VANaviBar,
+    'va-slider': VASlider,
     'va-content-wrap': VAContentWrap
   }
 }
