@@ -1,16 +1,15 @@
 <template>
   <div class="wrapper">
     <!-- <va-navibar></va-navibar>
-    <va-slider :slideMenuItems="slideMenuItems"></va-slider>
-    <va-content-wrap></va-content-wrap> -->
-    <router-view/>
+    <va-slider :slideMenuItems="slideMenuItems"></va-slider> --> 
+   <va-content-wrap></va-content-wrap>
   </div>
 
 </template>
 <script>
 // import VANaviBar from '../components/NaviBar.vue'
 // import VASlider from '../components/Slider.vue'
-// import VAContentWrap from '../components/ContentWrap.vue'
+import VAContentWrap from '../components/ContentWrap.vue'
 // import slideMenuItems from '../lib/slideMenuItems.js'
 export default {
   data () {
@@ -18,11 +17,11 @@ export default {
       // slideMenuItems: slideMenuItems
     }
   },
-  // components: {
+  components: {
   //   'va-navibar': VANaviBar,
   //   'va-slider': VASlider,
-  //   'va-content-wrap': VAContentWrap
-  // }
+    'va-content-wrap': VAContentWrap
+  }
 }
 </script>
 <style>
