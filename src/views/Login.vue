@@ -10,7 +10,7 @@
       <div class="login-box-body">
         <p class="login-box-msg">Sign in to start your session</p>
 
-        <form action="../../index2.html" method="post">
+        <div>
           <div class="form-group has-feedback">
             <input type="email" class="form-control" placeholder="Email" />
             <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
@@ -23,17 +23,18 @@
             <div class="col-xs-8">
               <div class="checkbox icheck">
                 <label>
-                  <input type="checkbox" /> Remember Me
+                  <input type="checkbox" />
+                  Remember Me {{token}}
                 </label>
               </div>
             </div>
             <!-- /.col -->
             <div class="col-xs-4">
-              <button type="submit" class="btn btn-primary btn-block btn-flat">Sign In</button>
+              <button @click="login()" class="btn btn-primary btn-block btn-flat">Sign In</button>
             </div>
             <!-- /.col -->
           </div>
-        </form>
+        </div>
 
         <div class="social-auth-links text-center">
           <p>- OR -</p>
@@ -59,14 +60,54 @@
 </template>
 
 <script>
-export default {};
+import axios from "axios";
+export default {
+  data: () => ({
+    token: ""
+  }),
+  methods: {
+    login() {
+      axios
+        .post("https://expressjs-auth.herokuapp.com/user/login", {
+          username: "user",
+          password: "password"
+        })
+        .then(response => {
+          console.log(response.data);
+          this.token = response.data.token;
+          this.getUserInfo();
+        })
+        .catch(err => {
+          console.log(err);
+        });
+    },
+    getUserInfo() {
+      axios({
+        method: "GET",
+        url: "https://expressjs-auth.herokuapp.com/user/info",
+        headers: {
+          Authorization: "Bearer user-token"
+        }
+      })
+        .then(res => {
+          console.log(res.data);
+          if (res.data && res.data.roles.length > 0) {
+            this.$router.push({ name: "home" });
+          }
+        })
+        .catch(err => {
+          console.log(err);
+        });
+    }
+  }
+};
 </script>
 
 <style>
 .login-box {
-    padding-top: 100px;
-    margin-top: 0px;
-    margin-bottom: 0px;
-    height: 100vh;
+  padding-top: 100px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  height: 100vh;
 }
 </style>
