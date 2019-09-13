@@ -38,6 +38,14 @@ export default new Router({
           }
         }
       ]
+    },{
+      path: '/login',
+      name: 'login',
+      component: () => import(/* webpackChunkName: "gogin" */ '@/views/Login.vue'),
+      meta: {
+        icon: 'fa fa-info',
+        name: 'About',
+      }
     }
   ]
 })
