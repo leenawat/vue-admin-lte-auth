@@ -51,7 +51,7 @@
 
         <a href="#">I forgot my password</a>
         <br />
-        <a href="register.html" class="text-center">Register a new membership</a>
+        <a href="#" class="text-center">Register a new membership</a>
       </div>
       <!-- /.login-box-body -->
     </div>
@@ -63,7 +63,8 @@
 import axios from "axios";
 export default {
   data: () => ({
-    token: ""
+    token: "",
+    redirect: undefined
   }),
   methods: {
     login() {
@@ -75,6 +76,7 @@ export default {
         .then(response => {
           console.log(response.data);
           this.token = response.data.token;
+          localStorage.setItem("token", this.token);
           this.getUserInfo();
         })
         .catch(err => {
@@ -92,12 +94,23 @@ export default {
         .then(res => {
           console.log(res.data);
           if (res.data && res.data.roles.length > 0) {
-            this.$router.push({ name: "home" });
+            this.$router.push({ path: this.redirect || '/'});
           }
         })
         .catch(err => {
           console.log(err);
         });
+    }
+  },
+  watch: {
+    $route: {
+      handler: function(route) {
+        const query = route.query;
+        if (query) {
+          this.redirect = query.redirect;
+        }
+      },
+      immediate: true
     }
   }
 };
@@ -109,5 +122,9 @@ export default {
   margin-top: 0px;
   margin-bottom: 0px;
   height: 100vh;
+}
+
+.checkbox.icheck {
+  margin-left: 20px;
 }
 </style>

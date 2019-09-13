@@ -6,6 +6,7 @@ import Vue from 'vue'
 import App from './App.vue'
 import EventBus from './lib/eventBus.js'
 import router from './router'
+import './permission' // permission control
 
 Vue.config.productionTip = false
 

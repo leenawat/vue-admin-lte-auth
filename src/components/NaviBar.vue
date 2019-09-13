@@ -3,9 +3,13 @@
     <!-- Logo -->
     <a href="index2.html" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
-      <span class="logo-mini"><b>A</b>LT</span>
+      <span class="logo-mini">
+        <b>A</b>LT
+      </span>
       <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg"><b>Admin</b>LTE</span>
+      <span class="logo-lg">
+        <b>Admin</b>LTE
+      </span>
     </a>
 
     <!-- Header Navbar: style can be found in header.less -->
@@ -32,11 +36,17 @@
                     <!-- start message -->
                     <a href="#">
                       <div class="pull-left">
-                        <img src="~admin-lte/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                        <img
+                          src="~admin-lte/dist/img/user2-160x160.jpg"
+                          class="img-circle"
+                          alt="User Image"
+                        />
                       </div>
                       <h4>
                         Support Team
-                        <small><i class="fa fa-clock-o"></i> 5 mins</small>
+                        <small>
+                          <i class="fa fa-clock-o"></i> 5 mins
+                        </small>
                       </h4>
                       <p>Why not buy a new awesome theme?</p>
                     </a>
@@ -45,11 +55,17 @@
                   <li>
                     <a href="#">
                       <div class="pull-left">
-                        <img src="~admin-lte/dist/img/user3-128x128.jpg" class="img-circle" alt="User Image">
+                        <img
+                          src="~admin-lte/dist/img/user3-128x128.jpg"
+                          class="img-circle"
+                          alt="User Image"
+                        />
                       </div>
                       <h4>
                         AdminLTE Design Team
-                        <small><i class="fa fa-clock-o"></i> 2 hours</small>
+                        <small>
+                          <i class="fa fa-clock-o"></i> 2 hours
+                        </small>
                       </h4>
                       <p>Why not buy a new awesome theme?</p>
                     </a>
@@ -57,11 +73,17 @@
                   <li>
                     <a href="#">
                       <div class="pull-left">
-                        <img src="~admin-lte/dist/img/user4-128x128.jpg" class="img-circle" alt="User Image">
+                        <img
+                          src="~admin-lte/dist/img/user4-128x128.jpg"
+                          class="img-circle"
+                          alt="User Image"
+                        />
                       </div>
                       <h4>
                         Developers
-                        <small><i class="fa fa-clock-o"></i> Today</small>
+                        <small>
+                          <i class="fa fa-clock-o"></i> Today
+                        </small>
                       </h4>
                       <p>Why not buy a new awesome theme?</p>
                     </a>
@@ -69,11 +91,17 @@
                   <li>
                     <a href="#">
                       <div class="pull-left">
-                        <img src="~admin-lte/dist/img/user3-128x128.jpg" class="img-circle" alt="User Image">
+                        <img
+                          src="~admin-lte/dist/img/user3-128x128.jpg"
+                          class="img-circle"
+                          alt="User Image"
+                        />
                       </div>
                       <h4>
                         Sales Department
-                        <small><i class="fa fa-clock-o"></i> Yesterday</small>
+                        <small>
+                          <i class="fa fa-clock-o"></i> Yesterday
+                        </small>
                       </h4>
                       <p>Why not buy a new awesome theme?</p>
                     </a>
@@ -81,18 +109,26 @@
                   <li>
                     <a href="#">
                       <div class="pull-left">
-                        <img src="~admin-lte/dist/img/user4-128x128.jpg" class="img-circle" alt="User Image">
+                        <img
+                          src="~admin-lte/dist/img/user4-128x128.jpg"
+                          class="img-circle"
+                          alt="User Image"
+                        />
                       </div>
                       <h4>
                         Reviewers
-                        <small><i class="fa fa-clock-o"></i> 2 days</small>
+                        <small>
+                          <i class="fa fa-clock-o"></i> 2 days
+                        </small>
                       </h4>
                       <p>Why not buy a new awesome theme?</p>
                     </a>
                   </li>
                 </ul>
               </li>
-              <li class="footer"><a href="#">See All Messages</a></li>
+              <li class="footer">
+                <a href="#">See All Messages</a>
+              </li>
             </ul>
           </li>
           <!-- Notifications: style can be found in dropdown.less -->
@@ -134,7 +170,9 @@
                   </li>
                 </ul>
               </li>
-              <li class="footer"><a href="#">View all</a></li>
+              <li class="footer">
+                <a href="#">View all</a>
+              </li>
             </ul>
           </li>
           <!-- Tasks: style can be found in dropdown.less -->
@@ -156,7 +194,14 @@
                         <small class="pull-right">20%</small>
                       </h3>
                       <div class="progress xs">
-                        <div class="progress-bar progress-bar-aqua" style="width: 20%" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
+                        <div
+                          class="progress-bar progress-bar-aqua"
+                          style="width: 20%"
+                          role="progressbar"
+                          aria-valuenow="20"
+                          aria-valuemin="0"
+                          aria-valuemax="100"
+                        >
                           <span class="sr-only">20% Complete</span>
                         </div>
                       </div>
@@ -171,7 +216,14 @@
                         <small class="pull-right">40%</small>
                       </h3>
                       <div class="progress xs">
-                        <div class="progress-bar progress-bar-green" style="width: 40%" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
+                        <div
+                          class="progress-bar progress-bar-green"
+                          style="width: 40%"
+                          role="progressbar"
+                          aria-valuenow="20"
+                          aria-valuemin="0"
+                          aria-valuemax="100"
+                        >
                           <span class="sr-only">40% Complete</span>
                         </div>
                       </div>
@@ -186,7 +238,14 @@
                         <small class="pull-right">60%</small>
                       </h3>
                       <div class="progress xs">
-                        <div class="progress-bar progress-bar-red" style="width: 60%" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
+                        <div
+                          class="progress-bar progress-bar-red"
+                          style="width: 60%"
+                          role="progressbar"
+                          aria-valuenow="20"
+                          aria-valuemin="0"
+                          aria-valuemax="100"
+                        >
                           <span class="sr-only">60% Complete</span>
                         </div>
                       </div>
@@ -201,7 +260,14 @@
                         <small class="pull-right">80%</small>
                       </h3>
                       <div class="progress xs">
-                        <div class="progress-bar progress-bar-yellow" style="width: 80%" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
+                        <div
+                          class="progress-bar progress-bar-yellow"
+                          style="width: 80%"
+                          role="progressbar"
+                          aria-valuenow="20"
+                          aria-valuemin="0"
+                          aria-valuemax="100"
+                        >
                           <span class="sr-only">80% Complete</span>
                         </div>
                       </div>
@@ -218,13 +284,17 @@
           <!-- User Account: style can be found in dropdown.less -->
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <img src="~admin-lte/dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
+              <img src="~admin-lte/dist/img/user2-160x160.jpg" class="user-image" alt="User Image" />
               <span class="hidden-xs">{{ currentUser.name }}</span>
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->
               <li class="user-header">
-                <img src="~admin-lte/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                <img
+                  src="~admin-lte/dist/img/user2-160x160.jpg"
+                  class="img-circle"
+                  alt="User Image"
+                />
 
                 <p>
                   {{ currentUser.name }} - {{ currentUser.position }}
@@ -252,14 +322,16 @@
                   <a href="#" class="btn btn-default btn-flat">Profile</a>
                 </div>
                 <div class="pull-right">
-                  <button @click="$router.push({name: 'login'})" class="btn btn-default btn-flat">Sign out</button>
+                  <button @click="signOut()" class="btn btn-default btn-flat">Sign out</button>
                 </div>
               </li>
             </ul>
           </li>
           <!-- Control Sidebar Toggle Button -->
           <li>
-            <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
+            <a href="#" data-toggle="control-sidebar">
+              <i class="fa fa-gears"></i>
+            </a>
           </li>
         </ul>
       </div>
@@ -271,13 +343,25 @@
 // import { mapGetters } from 'vuex'
 
 export default {
-  name: 'va-navibar',
-  data () {
+  name: "va-navibar",
+  data() {
     return {
       unreadMessagesCount: 1,
       unreadNotificationsCount: 2,
       remainTasksCount: 3,
-      currentUser: { "name": "Alexander Pierce", "position": "Web Developer", "state": { "color": "#3c763d", "name": "Online" }, "createdAt": "[native Date Wed Aug 21 2019 11:23:25 GMT+0700 (Indochina Time)]" }
+      currentUser: {
+        name: "Alexander Pierce",
+        position: "Web Developer",
+        state: { color: "#3c763d", name: "Online" },
+        createdAt:
+          "[native Date Wed Aug 21 2019 11:23:25 GMT+0700 (Indochina Time)]"
+      }
+    };
+  },
+  methods: {
+    signOut() {
+      localStorage.removeItem("token");
+      this.$router.push(`/login?redirect=${this.$route.fullPath}`)
     }
   }
   // computed: {
@@ -288,6 +372,5 @@ export default {
   //     'currentUser'
   //   ])
   // }
-}
-
+};
 </script>
