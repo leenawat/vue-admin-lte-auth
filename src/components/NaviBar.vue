@@ -322,7 +322,7 @@
                   <a href="#" class="btn btn-default btn-flat">Profile</a>
                 </div>
                 <div class="pull-right">
-                  <button @click="signOut()" class="btn btn-default btn-flat">Sign out</button>
+                  <button @click="logout" class="btn btn-default btn-flat">Sign out</button>
                 </div>
               </li>
             </ul>
@@ -359,8 +359,8 @@ export default {
     };
   },
   methods: {
-    signOut() {
-      localStorage.removeItem("token");
+    async logout() {
+      await this.$store.dispatch('user/logout')
       this.$router.push(`/login?redirect=${this.$route.fullPath}`)
     }
   }

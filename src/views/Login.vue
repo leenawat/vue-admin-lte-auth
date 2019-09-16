@@ -12,11 +12,21 @@
 
         <div>
           <div class="form-group has-feedback">
-            <input type="email" class="form-control" placeholder="Email" />
+            <input
+              type="email"
+              class="form-control"
+              placeholder="Email"
+              v-model="loginForm.username"
+            />
             <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
           </div>
           <div class="form-group has-feedback">
-            <input type="password" class="form-control" placeholder="Password" />
+            <input
+              type="password"
+              class="form-control"
+              placeholder="Password"
+              v-model="loginForm.password"
+            />
             <span class="glyphicon glyphicon-lock form-control-feedback"></span>
           </div>
           <div class="row">
@@ -64,42 +74,58 @@ import axios from "axios";
 export default {
   data: () => ({
     token: "",
-    redirect: undefined
+    redirect: undefined,
+    loginForm: {
+      username: "admin",
+      password: "password"
+    },
+    // loading: false
   }),
   methods: {
     login() {
-      axios
-        .post("https://expressjs-auth.herokuapp.com/user/login", {
-          username: "user",
-          password: "password"
+      // axios
+      //   .post("https://expressjs-auth.herokuapp.com/user/login", {
+      //     username: "user",
+      //     password: "password"
+      //   })
+      //   .then(response => {
+      //     console.log(response.data);
+      //     this.token = response.data.token;
+      //     localStorage.setItem("token", this.token);
+      //     this.getUserInfo();
+      //   })
+      //   .catch(err => {
+      //     console.log(err);
+      //   });
+      this.$store
+        .dispatch("user/login", this.loginForm)
+        .then(() => {
+          this.$router.push({
+            path: this.redirect || "/"
+          });
+          // this.loading = false;
         })
-        .then(response => {
-          console.log(response.data);
-          this.token = response.data.token;
-          localStorage.setItem("token", this.token);
-          this.getUserInfo();
-        })
-        .catch(err => {
-          console.log(err);
+        .catch(() => {
+          // this.loading = false;
         });
     },
     getUserInfo() {
-      axios({
-        method: "GET",
-        url: "https://expressjs-auth.herokuapp.com/user/info",
-        headers: {
-          Authorization: "Bearer user-token"
-        }
-      })
-        .then(res => {
-          console.log(res.data);
-          if (res.data && res.data.roles.length > 0) {
-            this.$router.push({ path: this.redirect || '/'});
-          }
-        })
-        .catch(err => {
-          console.log(err);
-        });
+      // axios({
+      //   method: "GET",
+      //   url: "https://expressjs-auth.herokuapp.com/user/info",
+      //   headers: {
+      //     Authorization: "Bearer user-token"
+      //   }
+      // })
+      //   .then(res => {
+      //     console.log(res.data);
+      //     if (res.data && res.data.roles.length > 0) {
+      //       this.$router.push({ path: this.redirect || "/" });
+      //     }
+      //   })
+      //   .catch(err => {
+      //     console.log(err);
+      //   });
     }
   },
   watch: {
