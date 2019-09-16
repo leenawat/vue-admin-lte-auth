@@ -1,5 +1,5 @@
 {
-  "name": "vue-admin-lte",
+  "name": "vue-admin-lte-auth",
   "version": "0.1.0",
   "private": true,
   "scripts": {

@@ -1,5 +1,5 @@
 module.exports = {
     publicPath: process.env.NODE_ENV === 'production'
-      ? '/vue-admin-lte/'
+      ? '/vue-admin-lte-auth/'
       : '/'
   }
