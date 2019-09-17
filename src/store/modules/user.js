@@ -102,6 +102,17 @@ const actions = {
         });
     })
   },
+
+  // remove token
+  resetToken({ commit }) {
+    return new Promise(resolve => {
+      console.log("reset Token")
+      commit('SET_TOKEN', '')
+      commit('SET_ROLES', [])
+      removeToken()
+      resolve()
+    })
+  },
 }
 
 
