@@ -4,6 +4,9 @@ import NProgress from 'nprogress' // progress bar
 import 'nprogress/nprogress.css' // progress bar style
 import { getToken, setToken, removeToken } from '@/utils/auth'
 
+
+NProgress.configure({ showSpinner: false }) // NProgress Configuration
+
 const whiteList = ['/login', '/auth-redirect'] // no redirect whitelist
 
 router.beforeEach(async (to, from, next) => {
@@ -19,7 +22,26 @@ router.beforeEach(async (to, from, next) => {
             // determine whether the user has obtained his permission roles through getInfo
             const hasRoles = store.getters.roles && store.getters.roles.length > 0
             if (hasRoles) {
-                next()
+                // prevent who know url and go to url direct without permission
+                // and show 403 page
+                if (to.meta.roles) {
+                    console.log("guard")
+                    var permissionRoles = to.meta.roles;
+                    console.log(to);
+                    const roles = store.getters && store.getters.roles
+                    console.log(roles);
+                    const hasPermission = roles.some(role => {
+                        return permissionRoles.includes(role)
+                    })
+                    console.log(hasPermission);
+                    if (hasPermission) {
+                        next()
+                    } else {
+                        next({ path: "/403" })
+                    }
+                }else{
+                    next()
+                }
             } else {
                 try {
                     const { roles } = await store.dispatch('user/getInfo');
@@ -40,6 +62,7 @@ router.beforeEach(async (to, from, next) => {
             }
         }
     } else {
+        /* has no token */
         if (whiteList.indexOf(to.path) !== -1) {
             // in the free login whitelist, go directly
             next()

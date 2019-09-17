@@ -34,5 +34,7 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 ### ref:
 See [https://github.com/devjin0617/vue2-admin-lte](https://github.com/devjin0617/vue2-admin-lte)
+https://dev.to/mygnu/vue-spa-router-guard-with-redirect-after-login-2anj
 
-
+### error page ref
+https://css-tricks.com/forums/topic/error-pages-401-403-404-500/
