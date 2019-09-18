@@ -1,6 +1,6 @@
 
-import axios from 'axios'
 import { getToken, setToken, removeToken } from '@/utils/auth'
+import request from '@/utils/request'
 
 const state = {
   token: getToken(),
@@ -32,12 +32,17 @@ const actions = {
   login({ commit }, userInfo) {
     console.log('login');
     return new Promise((resolve, reject) => {
-      axios.post("https://expressjs-auth.herokuapp.com/user/login", {
-        username: userInfo.username,
-        password: userInfo.password
+      request({
+        url: '/user/login',
+        method: 'post',
+        data: {
+          username: userInfo.username,
+          password: userInfo.password
+        }
       })
         .then(response => {
-          const { data } = response
+          // const { data } = response
+          const data = response;
           this.token = data.token;
 
           commit('SET_TOKEN', data.token)
@@ -70,16 +75,13 @@ const actions = {
   // get user info
   getInfo({ commit, state }) {
     return new Promise((resolve, reject) => {
-
-      axios({
-        method: "GET",
-        url: "https://expressjs-auth.herokuapp.com/user/info",
-        headers: {
-          Authorization: "Bearer " + getToken()
-        }
+      request({
+        url: '/user/info',
+        method: 'get'
       })
         .then(response => {
-          const { data } = response
+          // const { data } = response
+          const data = response
           console.log(data);
           if (!data) {
             reject('Verification failed, please Login again.')
